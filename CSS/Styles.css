@@ -536,3 +536,29 @@ height: 0;
     }
 }
 
+@media (max-width: 600px) {
+  .questions_tittle {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .questions_arrow {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bi-caret-up-fill {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
