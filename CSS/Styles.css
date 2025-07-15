@@ -401,7 +401,7 @@ height: 0;
 .nav__link--footer {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem; /* agrega espacio entre ellos */
+  gap: 1.5rem; 
   list-style: none;
   padding-left: 0;
 }
@@ -411,7 +411,30 @@ height: 0;
 }
 
 /*queris*/
-@media (max-width: 800px) {
+@media (max-width:800px){
+
+     .servicios_container {
+    grid-template-columns: 40px 1fr 40px;
+    padding: 0 10px;
+    align-items: center;
+  }
+
+  .bi-arrow-left,
+  .bi-arrow-right {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .servicios_img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .servicios_text {
+    text-align: center;
+  }
     .nav_menu {
         display: block;
     }
@@ -430,11 +453,10 @@ height: 0;
         z-index: 100;
         opacity: 0;
         pointer-events: none;
-        transition: 0.7s opacity;
+        transition: .7s opacity;
     }
 
-    .nav_link.nav_link--show {
-        --show: block;
+    .nav__link--show {
         opacity: 1;
         pointer-events: unset;
     }
@@ -457,7 +479,7 @@ height: 0;
     }
 
     .about_icons:last-of-type {
-        grid-column: 1 / -1;
+        grid-column: 1/-1;
     }
 
     .knowledge_container {
@@ -468,12 +490,29 @@ height: 0;
     }
 
     .knowledge_picture {
-        grid-row: 1 / 2;
+        grid-row: 1/2;
         justify-self: center;
+    }
+
+    .servicios_container {
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .servicios_body {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .servicios_img {
+        width: 200px;
+        height: 200px;
     }
 
     .footer__container {
         flex-wrap: wrap;
+        gap: 2em;
     }
 
     .nav--footer {
@@ -497,48 +536,3 @@ height: 0;
     }
 }
 
-@media (max-width: 600px) {
-    .hero_tittle {
-        font-size: 2rem;
-    }
-
-    .hero_paragraph {
-        font-size: 1rem;
-    }
-
-    .subtittle {
-        font-size: 1.8rem;
-    }
-
-    .questions_tittle {
-        font-size: 1rem;
-    }
-
-    .footer__title {
-        justify-self: start;
-        margin-bottom: 15px;
-    }
-
-    .nav--footer {
-        padding-bottom: 60px;
-    }
-
-    .nav__link--footer {
-        justify-content: space-between;
-    }
-
-    .footer__inputs {
-        flex-wrap: wrap;
-    }
-
-    .footer__input {
-        flex-basis: 100%;
-        margin: 0;
-        margin-bottom: 16px;
-    }
-
-    .footer__submit {
-        margin-right: auto;
-        margin-left: 0;
-    }
-}
