@@ -39,6 +39,7 @@ body{
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
     z-index: -1;
+    background-position: center center;
 }
 
 /*nav*/ 
@@ -267,26 +268,57 @@ display: none;
     overflow: hidden;
 }
 
-.questions_tittle{
-    display: flex;
-    padding: 30px 0 30px;
+.questions_tittle {
+    display: flex; /* Convertimos el contenedor en un flexbox horizontal */
+    
+    align-items: center; 
+    /* Esta propiedad es la clave: 
+       alinea verticalmente tanto el texto como el ícono en el centro, 
+       incluso si el texto ocupa más de una línea.
+       Esto soluciona el problema de que los íconos parecían estar en diferentes posiciones. */
+
+    justify-content: space-between; 
+    /* Separa el texto y el ícono, dejando uno a la izquierda y otro a la derecha */
+
+    gap: 1rem; 
+    /* Espacio consistente entre el texto y el ícono */
+
+    padding: 30px 0; 
+    /* Espaciado vertical arriba y abajo del contenedor */
+
+    font-size: 20px; 
+    /* Tamaño del texto para mantener consistencia */
+
+    font-weight: 600; 
+    /* Peso de la fuente para que se vea fuerte y clara */
+
+    color: var(--color-tittle); 
+    /* Color definido en la raíz de tu CSS */
+
     cursor: pointer;
-    color: var(--color-tittle);
-    justify-content: space-between;
-    font-size: 20px;
 }
 
 .questions_arrow{
-    border-radius: 50%;
-    background-color: var(--color-tittle);
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end;
-    margin-left: 10px;
-    transition: transform .3s;
+  border-radius: 50%;
+  background-color: var(--color-tittle);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  transition: transform .3s;
+  flex-shrink: 0; /* Evita que el ícono se deforme */
+}
+
+.questions_arrow i {
+  font-size: 14px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .questions_arrow--rotate {
@@ -303,6 +335,29 @@ display: none;
 text-align: left;
 height: 0;
 }
+
+.questions_arrow i {
+  font-size: 1.1rem;
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questions_icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.questions_arrow--rotate .questions_icon path {
+  transform: rotate(180deg);
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+
 
 /*footer*/
 
@@ -565,3 +620,5 @@ height: 0;
     cursor: pointer;
   }
 }
+
+
